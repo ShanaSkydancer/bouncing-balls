@@ -1,6 +1,7 @@
-const { expect } = require('chai');
-const httpMocks = require('node-mocks-http');
-const Router = require('../router');
+import { Router } from '../router';
+import expect from 'chai';
+import { describe } from 'mocha';
+import httpMocks  from 'node-mocks-http';
 
 describe('GET /health-check', () => {
   it('should return a 200, with a message to say the server is healthy', () => {

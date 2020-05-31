@@ -1,3 +1,11 @@
 body {
     background: lightpink;
+    text-align: center
+}
+
+#ballCanvas {
+    display: block;
+    border: 5px solid black;
+    margin: 50px auto;
+    position: absolute;
 }

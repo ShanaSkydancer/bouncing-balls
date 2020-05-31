@@ -1,10 +1,12 @@
-const express = require('express');
-const app = express();
-const router = express.Router();
-const path = require('path');
-const PORT = 8000;
+import express from 'express';
+import * as path from 'path';
 
-router.get('/',function(req,res){
+let app = express();
+let router = express.Router();
+let PORT = 8000;
+let __dirname = path.resolve();
+
+router.get('/', (req, res) => {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
 

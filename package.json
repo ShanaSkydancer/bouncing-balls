@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "coding exercise on bouncing balls",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "node app.js",
     "test": "mocha"
@@ -15,5 +16,8 @@
     "mocha": "^7.1.2",
     "node": "^14.2.0",
     "node-mocks-http": "^1.8.1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.5"
   }
 }

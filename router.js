@@ -1,19 +1,20 @@
-const url = require('url');
+import url from 'url';
 
-function Router() {}
+export class Router {
 
-Router.prototype.route = function(request, response) {
-  const parsedUrl = url.parse(request.url);
+  constructor () {}
 
-  if (parsedUrl.pathname === '/health-check') {
-    response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify({ "server-healthy": true }));
-  } else {
-    response.writeHead(404, {
-      'Content-Type': 'text/html'
-    });
-    response.end('<h1>404, Page not found</h1>')
+  route (req, res) {
+    const parsedUrl = url.parse(req.url);
+
+    if (parsedUrl.pathname === '/health-check') {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ "server-healthy": true }))
+    } else {
+      res.writeHead(404, {
+        'Content-Type': 'text/html'
+      });
+      res.end('<h1>404, Page not found</h1>')
+    }
   }
-};
-
-module.exports = Router;
+}
